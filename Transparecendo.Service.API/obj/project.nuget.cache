@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "F7Jthvik3gzU9kj5bvYSW0B1qLT5alzx/MsZ8SROJIO5AwZKPcC8yd61T2OSdSYQKpxO/nAJu9qK6Y4Fyvfagw==",
+  "dgSpecHash": "jZl+sw0aVfc9KbdiGdsOj7LM7D4fSYqrbUXF8c9fyuffP3AmLErzuWH8S9knFe1V33kAQDSpon9KYaqR1eMqbw==",
   "success": true,
   "projectFilePath": "C:\\Projects\\Transparecendo\\Transparecendo.Service.API\\Transparecendo.Service.API.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Milton\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "C:\\Users\\Milton\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Milton\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "C:\\Users\\Milton\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "C:\\Users\\Milton\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "C:\\Users\\Milton\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+  ],
   "logs": []
 }
