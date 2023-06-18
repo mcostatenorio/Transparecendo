@@ -1,12 +1,15 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Transparecendo.Service.API.Entities;
 
 namespace Transparecendo.Service.Domain.Entities
 {
-    public class CorporateSpending
+    public class CorporateSpending : Base
     {
         public DateTime DataPagamento { get; set; }
 
@@ -16,7 +19,8 @@ namespace Transparecendo.Service.Domain.Entities
         
         public string? NomeFornecedor { get; set; }
 
-        public Double Valor { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public Decimal Valor { get; set; }
 
         public string? Tipo { get; set; }
 

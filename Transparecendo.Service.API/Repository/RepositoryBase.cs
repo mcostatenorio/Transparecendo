@@ -26,6 +26,19 @@ namespace Transparecendo.Service.API.Repository
             }
         }
 
+        public void AddList(List<T> obj)
+        {
+            try
+            {
+                _transparecendoDbContext.Set<T>().AddRange(obj);
+                _transparecendoDbContext.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public IEnumerable<T> GetAll()
         {
             return _transparecendoDbContext.Set<T>().ToList();

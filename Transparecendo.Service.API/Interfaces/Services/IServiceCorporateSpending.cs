@@ -5,6 +5,6 @@ namespace Transparecendo.Service.API.Interfaces.Services
 {
     public interface IServiceCorporateSpending : IServiceBase<CorporateSpending>
     {
-        public bool UploadCSVFile(string url);
+        public bool UploadCSVFile(string path);
     }
 }

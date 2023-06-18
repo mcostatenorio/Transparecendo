@@ -3,6 +3,7 @@
     public interface IRepositoryBase<T> where T : class
     {
         void Add(T obj);
+        void AddList(List<T> obj);
 
         void Update(T obj);
 
