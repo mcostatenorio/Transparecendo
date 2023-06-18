@@ -2,6 +2,7 @@
 using CsvHelper.Configuration;
 using System.Formats.Asn1;
 using System.Globalization;
+using System.Text;
 using Transparecendo.Service.API.Helpers;
 using Transparecendo.Service.API.Interfaces.Repository;
 using Transparecendo.Service.API.Interfaces.Services;
