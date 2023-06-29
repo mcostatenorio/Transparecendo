@@ -17,8 +17,8 @@ namespace Transparecendo.Service.API.Controllers
             _serviceCorporateSpending = serviceCorporateSpending;
         }
 
-        [HttpGet("Post")]
-        public ActionResult Post(string path)
+        [HttpPost]
+        public ActionResult SendCSV(string path)
         {
             if(_serviceCorporateSpending.UploadCSVFile(path))
                 return Ok();

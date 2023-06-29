@@ -23,7 +23,7 @@ namespace Transparecendo.Service.API.Services
         {
             List<CorporateSpending> list = new List<CorporateSpending>();
 
-            using (var reader = new StreamReader(path))
+            using (var reader = new StreamReader(path, Encoding.UTF8))
             using (var csv = new CsvReader(reader, new CsvConfiguration(System.Globalization.CultureInfo.InvariantCulture) { Delimiter = ";" }))
             {
                 csv.Read();
