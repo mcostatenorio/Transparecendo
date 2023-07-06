@@ -1,6 +1,6 @@
 ﻿using Transparecendo.Core.Client;
 
-namespace Transparecendo.Service.Web.WebRequest.Interfaces
+namespace Transparecendo.Web.WebRequest.Interfaces
 {
     public interface IGetWebRequest
     {

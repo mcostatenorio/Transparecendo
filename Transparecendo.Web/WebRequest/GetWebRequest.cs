@@ -1,7 +1,7 @@
 ﻿using Transparecendo.Core.Client;
-using Transparecendo.Service.Web.WebRequest.Interfaces;
+using Transparecendo.Web.WebRequest.Interfaces;
 
-namespace Transparecendo.Service.Web.Request
+namespace Transparecendo.Web.Request
 {
     public class GetWebRequest : HttpApiCallClient, IGetWebRequest
     {

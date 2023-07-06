@@ -1,14 +1,13 @@
 ﻿using CsvHelper;
 using CsvHelper.Configuration;
-using System.Formats.Asn1;
 using System.Globalization;
 using System.Text;
+using Transparecendo.API.Entities;
+using Transparecendo.Core.Mapper.Interfaces;
 using Transparecendo.Core.Services;
 using Transparecendo.Service.API.Helpers;
 using Transparecendo.Service.API.Interfaces.Repository;
 using Transparecendo.Service.API.Interfaces.Services;
-using Transparecendo.Core.Entities;
-using Transparecendo.Core.Mapper.Interfaces;
 
 namespace Transparecendo.Service.API.Services
 {
@@ -40,6 +39,28 @@ namespace Transparecendo.Service.API.Services
                     
                     CorporateSpending _corporateSpending = new CorporateSpending();
                     _corporateSpending.DataPagamento = DateTime.ParseExact(csv.GetField(0), "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+                    switch (_corporateSpending.DataPagamento)
+                    {
+                        case DateTime n when (n >= new DateTime(2003, 1, 1) && n < new DateTime(2007, 1, 1)):
+                            _corporateSpending.Presidente = "Lula - 1 Mandato";
+                            break;
+                        case DateTime n when (n >= new DateTime(2007, 1, 1) && n < new DateTime(2011, 1, 1)):
+                            _corporateSpending.Presidente = "Lula - 2 Mandato";
+                            break;
+                        case DateTime n when (n >= new DateTime(2011, 1, 1) && n < new DateTime(2015, 1, 1)):
+                            _corporateSpending.Presidente = "Dilma - 1 Mandato";
+                            break;
+                        case DateTime n when (n >= new DateTime(2015, 1, 1) && n < new DateTime(2016, 8, 31)):
+                            _corporateSpending.Presidente = "Dilma - 2 Mandato";
+                            break;
+                        case DateTime n when (n >= new DateTime(2016, 8, 31) && n < new DateTime(2019, 1, 1)):
+                            _corporateSpending.Presidente = "Michel Temer - 1 Mandato";
+                            break;
+                        case DateTime n when (n >= new DateTime(2019, 1, 1)):
+                            _corporateSpending.Presidente = "Bolsonaro - 1 Mandato";
+                            break;
+                    }
                     _corporateSpending.CpfServidor = csv.GetField(1);
                     _corporateSpending.DocumentoFornecedor = csv.GetField(2);
                     _corporateSpending.NomeFornecedor = csv.GetField(3);
@@ -59,6 +80,11 @@ namespace Transparecendo.Service.API.Services
         public Result GetByData(DateTime dtStart, DateTime dtEnd)
         {
             return Success(_mapperCorporateSpending.MapperListDTOCorporateSpending(_repositoryCorporateSpending.GetByData(dtStart, dtEnd)));
+        }
+
+        public Result GetAllValuesByTerm()
+        {
+            return Success(_repositoryCorporateSpending.GetAllValuesByTerm());
         }
 
     }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace Transparecendo.Service.API.Migrations
+namespace Transparecendo.API.Migrations
 {
     /// <inheritdoc />
     public partial class version_01 : Migration
@@ -25,7 +25,8 @@ namespace Transparecendo.Service.API.Migrations
                     Tipo = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SubElementoDespesa = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CDIC = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreateDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    Presidente = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>
                 {

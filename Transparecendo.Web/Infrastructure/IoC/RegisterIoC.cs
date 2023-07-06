@@ -1,9 +1,9 @@
-﻿using Transparecendo.Service.Web.Request;
-using Transparecendo.Service.Web.Services;
-using Transparecendo.Service.Web.Services.Interfaces;
-using Transparecendo.Service.Web.WebRequest.Interfaces;
+﻿using Transparecendo.Web.Request;
+using Transparecendo.Web.Services;
+using Transparecendo.Web.Services.Interfaces;
+using Transparecendo.Web.WebRequest.Interfaces;
 
-namespace Transparecendo.Service.API.Infrastructure.IoC
+namespace Transparecendo.Web.Infrastructure.IoC
 {
     public static class RegisterIoC
     {

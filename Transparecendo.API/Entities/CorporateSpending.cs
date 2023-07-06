@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Transparecendo.Service.API.Entities;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Transparecendo.Core.Entities
+namespace Transparecendo.API.Entities
 {
     public class CorporateSpending : Base
     {
@@ -26,5 +20,7 @@ namespace Transparecendo.Core.Entities
         public string? SubElementoDespesa { get; set; }
 
         public string? CDIC { get; set; }
+
+        public string? Presidente { get; set;}
     }
 }

@@ -8,7 +8,7 @@ using Transparecendo.Service.API.Infrastructure.DbContext;
 
 #nullable disable
 
-namespace Transparecendo.Service.API.Migrations
+namespace Transparecendo.API.Migrations
 {
     [DbContext(typeof(TransparecendoDbContext))]
     partial class TransparecendoDbContextModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace Transparecendo.Service.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Transparecendo.Service.Domain.Entities.CorporateSpending", b =>
+            modelBuilder.Entity("Transparecendo.Core.Entities.CorporateSpending", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -36,7 +36,7 @@ namespace Transparecendo.Service.API.Migrations
                     b.Property<string>("CpfServidor")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("CreateDate")
+                    b.Property<DateTime>("DataCriacao")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DataPagamento")
@@ -46,6 +46,9 @@ namespace Transparecendo.Service.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NomeFornecedor")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Presidente")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("SubElementoDespesa")

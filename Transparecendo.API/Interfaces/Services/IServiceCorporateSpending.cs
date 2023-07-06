@@ -1,6 +1,5 @@
-﻿using Transparecendo.Core.Services;
-using Transparecendo.Core.Entities;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+﻿using Transparecendo.API.Entities;
+using Transparecendo.Core.Services;
 
 namespace Transparecendo.Service.API.Interfaces.Services
 {
@@ -9,5 +8,7 @@ namespace Transparecendo.Service.API.Interfaces.Services
         bool UploadCSVFile(string path);
 
         Result GetByData(DateTime dtStart, DateTime dtEnd);
+
+        Result GetAllValuesByTerm();
     }
 }

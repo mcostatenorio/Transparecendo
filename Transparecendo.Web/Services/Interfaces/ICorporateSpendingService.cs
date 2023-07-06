@@ -1,6 +1,6 @@
-﻿using Transparecendo.Core.DTO;
+﻿using Transparecendo.Web.DTO;
 
-namespace Transparecendo.Service.Web.Services.Interfaces
+namespace Transparecendo.Web.Services.Interfaces
 {
     public interface ICorporateSpendingService
     {

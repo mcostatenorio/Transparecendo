@@ -31,5 +31,12 @@ namespace Transparecendo.Service.API.Controllers
         {
             return _serviceCorporateSpending.GetByData(dataInicio, dataFinal);
         }
+
+        [HttpGet]
+        [Route("valuesByTerm")]
+        public ActionResult GetAllValuesByTerm()
+        {
+            return _serviceCorporateSpending.GetAllValuesByTerm();
+        }
     }
 }

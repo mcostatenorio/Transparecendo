@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Transparecendo.Core.DTO
+namespace Transparecendo.API.DTO
 {
     public class CorporateSpendingDto
     {

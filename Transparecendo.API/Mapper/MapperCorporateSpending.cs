@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Transparecendo.Core.DTO;
-using Transparecendo.Core.Entities;
+﻿using Transparecendo.API.DTO;
+using Transparecendo.API.Entities;
 using Transparecendo.Core.Mapper.Interfaces;
 
 namespace Transparecendo.Core.Mapper

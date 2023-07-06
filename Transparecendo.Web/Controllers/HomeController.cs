@@ -1,10 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Transparecendo.Application.Web.Models;
-using Transparecendo.Service.Web.Services;
-using Transparecendo.Service.Web.Services.Interfaces;
+using Transparecendo.Web.Models;
+using Transparecendo.Web.Services.Interfaces;
 
-namespace Transparecendo.Application.Web.Controllers
+namespace Transparecendo.Web.Controllers
 {
     public class HomeController : Controller
     {

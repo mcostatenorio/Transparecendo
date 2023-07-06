@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Transparecendo.Core.Entities;
+using Transparecendo.API.Entities;
 
 namespace Transparecendo.Service.API.Infrastructure.DbContext
 {

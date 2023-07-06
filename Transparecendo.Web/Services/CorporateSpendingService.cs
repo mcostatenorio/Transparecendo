@@ -1,8 +1,8 @@
-﻿using Transparecendo.Core.DTO;
-using Transparecendo.Service.Web.Services.Interfaces;
-using Transparecendo.Service.Web.WebRequest.Interfaces;
+﻿using Transparecendo.Web.DTO;
+using Transparecendo.Web.Services.Interfaces;
+using Transparecendo.Web.WebRequest.Interfaces;
 
-namespace Transparecendo.Service.Web.Services
+namespace Transparecendo.Web.Services
 {
     public class CorporateSpendingService : ICorporateSpendingService
     {

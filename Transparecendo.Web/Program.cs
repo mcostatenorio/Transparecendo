@@ -1,4 +1,4 @@
-using Transparecendo.Service.API.Infrastructure.IoC;
+using Transparecendo.Web.Infrastructure.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 

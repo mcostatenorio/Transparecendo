@@ -1,4 +1,4 @@
-namespace Transparecendo.Application.Web.Models
+namespace Transparecendo.Web.Models
 {
     public class ErrorViewModel
     {
