@@ -12,7 +12,7 @@ using Transparecendo.Service.API.Infrastructure.DbContext;
 namespace Transparecendo.API.Migrations
 {
     [DbContext(typeof(TransparecendoDbContext))]
-    [Migration("20230706005006_version_01")]
+    [Migration("20230715040253_version_01")]
     partial class version_01
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace Transparecendo.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Transparecendo.Core.Entities.CorporateSpending", b =>
+            modelBuilder.Entity("Transparecendo.API.Entities.CorporateSpending", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,8 +48,14 @@ namespace Transparecendo.API.Migrations
                     b.Property<string>("DocumentoFornecedor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Mandato")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NomeFornecedor")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Ordem")
+                        .HasColumnType("int");
 
                     b.Property<string>("Presidente")
                         .HasColumnType("nvarchar(max)");
@@ -58,6 +64,9 @@ namespace Transparecendo.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlImagem")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Valor")

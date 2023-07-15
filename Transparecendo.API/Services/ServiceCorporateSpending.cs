@@ -43,22 +43,40 @@ namespace Transparecendo.Service.API.Services
                     switch (_corporateSpending.DataPagamento)
                     {
                         case DateTime n when (n >= new DateTime(2003, 1, 1) && n < new DateTime(2007, 1, 1)):
-                            _corporateSpending.Presidente = "Lula - 1 Mandato";
+                            _corporateSpending.Presidente = "Luiz Inácio Lula da Silva";
+                            _corporateSpending.Mandato = "1º Mandato";
+                            _corporateSpending.UrlImagem = "assets/images/president/Luiz_Inacio_Lula_da_Silva.jpg";
+                            _corporateSpending.Ordem = 1;
                             break;
                         case DateTime n when (n >= new DateTime(2007, 1, 1) && n < new DateTime(2011, 1, 1)):
-                            _corporateSpending.Presidente = "Lula - 2 Mandato";
+                            _corporateSpending.Presidente = "Luiz Inácio Lula da Silva";
+                            _corporateSpending.Mandato = "2º Mandato";
+                            _corporateSpending.UrlImagem = "assets/images/president/Luiz_Inacio_Lula_da_Silva.jpg";
+                            _corporateSpending.Ordem = 2;
                             break;
                         case DateTime n when (n >= new DateTime(2011, 1, 1) && n < new DateTime(2015, 1, 1)):
-                            _corporateSpending.Presidente = "Dilma - 1 Mandato";
+                            _corporateSpending.Presidente = "Dilma Vana Rousseff";
+                            _corporateSpending.Mandato = "1º Mandato";
+                            _corporateSpending.UrlImagem = "assets/images/president/Dilma_Vana_Rousseff.jpg.jpg";
+                            _corporateSpending.Ordem = 3;
                             break;
                         case DateTime n when (n >= new DateTime(2015, 1, 1) && n < new DateTime(2016, 8, 31)):
-                            _corporateSpending.Presidente = "Dilma - 2 Mandato";
+                            _corporateSpending.Presidente = "Dilma Vana Rousseff";
+                            _corporateSpending.Mandato = "2º Mandato";
+                            _corporateSpending.UrlImagem = "assets/images/president/Dilma_Vana_Rousseff.jpg";
+                            _corporateSpending.Ordem = 4;
                             break;
                         case DateTime n when (n >= new DateTime(2016, 8, 31) && n < new DateTime(2019, 1, 1)):
-                            _corporateSpending.Presidente = "Michel Temer - 1 Mandato";
+                            _corporateSpending.Presidente = "Michel Miguel Elias Temer Lulia";
+                            _corporateSpending.Mandato = "1º Mandato";
+                            _corporateSpending.UrlImagem = "assets/images/president/Michel_Miguel_Elias_Temer_Lulia.jpg";
+                            _corporateSpending.Ordem = 5;
                             break;
                         case DateTime n when (n >= new DateTime(2019, 1, 1)):
-                            _corporateSpending.Presidente = "Bolsonaro - 1 Mandato";
+                            _corporateSpending.Presidente = "Jair Messias Bolsonaro";
+                            _corporateSpending.Mandato = "1º Mandato";
+                            _corporateSpending.UrlImagem = "assets/images/president/Jair_Messias_Bolsonaro.jpg";
+                            _corporateSpending.Ordem = 6;
                             break;
                     }
                     _corporateSpending.CpfServidor = csv.GetField(1);

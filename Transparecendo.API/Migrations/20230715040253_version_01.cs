@@ -26,6 +26,9 @@ namespace Transparecendo.API.Migrations
                     SubElementoDespesa = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CDIC = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Presidente = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Mandato = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UrlImagem = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ordem = table.Column<int>(type: "int", nullable: false),
                     DataCriacao = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

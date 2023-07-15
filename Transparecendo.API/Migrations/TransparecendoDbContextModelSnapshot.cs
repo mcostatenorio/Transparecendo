@@ -22,7 +22,7 @@ namespace Transparecendo.API.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("Transparecendo.Core.Entities.CorporateSpending", b =>
+            modelBuilder.Entity("Transparecendo.API.Entities.CorporateSpending", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,8 +45,14 @@ namespace Transparecendo.API.Migrations
                     b.Property<string>("DocumentoFornecedor")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Mandato")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("NomeFornecedor")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Ordem")
+                        .HasColumnType("int");
 
                     b.Property<string>("Presidente")
                         .HasColumnType("nvarchar(max)");
@@ -55,6 +61,9 @@ namespace Transparecendo.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Tipo")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UrlImagem")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("Valor")

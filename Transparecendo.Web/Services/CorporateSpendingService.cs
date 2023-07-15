@@ -23,6 +23,16 @@ namespace Transparecendo.Web.Services
                 return result.Obj;
             else
                 return new List<CorporateSpendingDto>();
-        } 
+        }
+
+        public async Task<List<ValuesByTermDto>> GetAllValuesByTerm()
+        {
+            var result = await _getWebRequest.GetAsync<List<ValuesByTermDto>>(string.Format($"{_configuration["Urls:TransparecendoBaseCorporateSpending"]}/valuesByTerm"));
+
+            if (result != null && result.Obj != null)
+                return result.Obj.OrderBy(x => x.NomePresidente).ToList();
+            else
+                return new List<ValuesByTermDto>();
+        }
     }
 }

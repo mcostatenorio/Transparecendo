@@ -1,5 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
+using System.ComponentModel;
 using System.Diagnostics;
+using System.Xml.Linq;
 using Transparecendo.Web.Models;
 using Transparecendo.Web.Services.Interfaces;
 
@@ -18,7 +21,8 @@ namespace Transparecendo.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var result = await _corporateSpendingService.GetByData(DateTime.Now, DateTime.Now);
+            var allValuesByTerm = await _corporateSpendingService.GetAllValuesByTerm();
+            ViewBag.ValuesByTerm = allValuesByTerm.OrderBy(a => a.Ordem).ToList();
             return View();
         }
 

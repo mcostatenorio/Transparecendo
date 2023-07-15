@@ -27,7 +27,7 @@ namespace Transparecendo.Service.Domain.Repository
 
             using (var command = _TransparecendoDbContext.Database.GetDbConnection().CreateCommand())
             {
-                command.CommandText = "select sum(valor) as Valor, Presidente as 'NomePresidente' from CorporateSpending group by Presidente";
+                command.CommandText = "select sum(valor) as Valor, Presidente as 'NomePresidente', Mandato, UrlImagem, Ordem from CorporateSpending group by Presidente, Mandato, UrlImagem, Ordem  order by Ordem asc ";
                 command.CommandType = CommandType.Text;
 
                 if (command.Connection?.State != ConnectionState.Open) { command.Connection?.Open(); }
@@ -39,6 +39,9 @@ namespace Transparecendo.Service.Domain.Repository
                         var obj = new ValuesByTermDto();
                         obj.Valor = (decimal)result[0];
                         obj.NomePresidente = (string)result[1];
+                        obj.Mandato = (string)result[2];
+                        obj.UrlImagem = (string)result[3];
+                        obj.Ordem = (int)result[4];
                         ValuesByTermDto.Add(obj);
                     }
                 }
