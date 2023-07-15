@@ -57,7 +57,7 @@ namespace Transparecendo.Service.API.Services
                         case DateTime n when (n >= new DateTime(2011, 1, 1) && n < new DateTime(2015, 1, 1)):
                             _corporateSpending.Presidente = "Dilma Vana Rousseff";
                             _corporateSpending.Mandato = "1º Mandato";
-                            _corporateSpending.UrlImagem = "assets/images/president/Dilma_Vana_Rousseff.jpg.jpg";
+                            _corporateSpending.UrlImagem = "assets/images/president/Dilma_Vana_Rousseff.jpg";
                             _corporateSpending.Ordem = 3;
                             break;
                         case DateTime n when (n >= new DateTime(2015, 1, 1) && n < new DateTime(2016, 8, 31)):
