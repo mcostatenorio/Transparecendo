@@ -152,6 +152,7 @@
         <div class="vertical-overlay"></div>
         <div class="main-content">
             @RenderBody()
+            @RenderSection("Scripts", required: true)
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -187,7 +188,6 @@
     <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-    @RenderSection("Scripts", required: false)
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
 </body>
 </html>
