@@ -1,4 +1,5 @@
-﻿using Transparecendo.API.Entities;
+﻿using Transparecendo.API.DTO;
+using Transparecendo.API.Entities;
 using Transparecendo.Core.Services;
 
 namespace Transparecendo.Service.API.Interfaces.Services
@@ -7,8 +8,10 @@ namespace Transparecendo.Service.API.Interfaces.Services
     {
         bool UploadCSVFile(string path);
 
-        Result GetByData(DateTime dtStart, DateTime dtEnd);
+        Result GetExpense(ExpenseFilterDto expenseFilter);
 
-        Result GetAllValuesByTerm();
+        Result GetExpenseByData(DateTime dtStart, DateTime dtEnd);
+
+        Result GetAllExpenseByTerm();
     }
 }

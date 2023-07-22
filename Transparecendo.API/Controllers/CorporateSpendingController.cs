@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Transparecendo.API.DTO;
 using Transparecendo.Service.API.Interfaces.Services;
 
 namespace Transparecendo.Service.API.Controllers
@@ -26,17 +27,24 @@ namespace Transparecendo.Service.API.Controllers
                 return BadRequest();
         }
 
+        /// <summary>
+        /// Get expenses by query filter
+        /// </summary>
+        /// <param name="expenseFilter">Filter</param>
+        /// <returns></returns>
+        [ProducesResponseType(200, Type= typeof(CorporateSpendingDto))]
         [HttpGet]
-        public ActionResult GetByData(DateTime dataInicio, DateTime dataFinal)
-        {
-            return _serviceCorporateSpending.GetByData(dataInicio, dataFinal);
-        }
+        public ActionResult GetExpense([FromQuery] ExpenseFilterDto expenseFilter)
+             => _serviceCorporateSpending.GetExpense(expenseFilter);
 
         [HttpGet]
-        [Route("valuesByTerm")]
-        public ActionResult GetAllValuesByTerm()
-        {
-            return _serviceCorporateSpending.GetAllValuesByTerm();
-        }
+        [Route("expenseByData")]
+        public ActionResult GetExpenseByData(DateTime dataInicio, DateTime dataFinal)
+            => _serviceCorporateSpending.GetExpenseByData(dataInicio, dataFinal);
+
+        [HttpGet]
+        [Route("expenseByTerm")]
+        public ActionResult GetAllExpenseByTerm()
+            => _serviceCorporateSpending.GetAllExpenseByTerm();
     }
 }

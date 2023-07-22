@@ -2,6 +2,7 @@
 using CsvHelper.Configuration;
 using System.Globalization;
 using System.Text;
+using Transparecendo.API.DTO;
 using Transparecendo.API.Entities;
 using Transparecendo.Core.Mapper.Interfaces;
 using Transparecendo.Core.Services;
@@ -95,14 +96,19 @@ namespace Transparecendo.Service.API.Services
             return true;
         }
 
-        public Result GetByData(DateTime dtStart, DateTime dtEnd)
+        public Result GetExpense(ExpenseFilterDto expenseFilter)
         {
-            return Success(_mapperCorporateSpending.MapperListDTOCorporateSpending(_repositoryCorporateSpending.GetByData(dtStart, dtEnd)));
+            return Success(_mapperCorporateSpending.MapperListDTOCorporateSpending(_repositoryCorporateSpending.GetExpense(expenseFilter)));
         }
 
-        public Result GetAllValuesByTerm()
+        public Result GetExpenseByData(DateTime dtStart, DateTime dtEnd)
         {
-            return Success(_repositoryCorporateSpending.GetAllValuesByTerm());
+            return Success(_mapperCorporateSpending.MapperListDTOCorporateSpending(_repositoryCorporateSpending.GetExpenseByData(dtStart, dtEnd)));
+        }
+
+        public Result GetAllExpenseByTerm()
+        {
+            return Success(_repositoryCorporateSpending.GetAllExpenseByTerm());
         }
 
     }

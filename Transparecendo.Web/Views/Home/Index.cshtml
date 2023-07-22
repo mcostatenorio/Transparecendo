@@ -4,7 +4,6 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        console.log('teste');
     });
 
     function toLocaleString(value) {
@@ -35,7 +34,7 @@
                         </div>
                     </div>
                     <div class="row row-cols-xxl-3 row-cols-lg-3 row-cols-1">
-                        @foreach (var values in ViewBag.ValuesByTerm)
+                        @foreach (var values in ViewBag.ExpenseByTerm)
                         {
                             <div class="col">
                                 <div class="card card-body">

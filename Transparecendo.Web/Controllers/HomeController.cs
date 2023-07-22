@@ -21,8 +21,8 @@ namespace Transparecendo.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var allValuesByTerm = await _corporateSpendingService.GetAllValuesByTerm();
-            ViewBag.ValuesByTerm = allValuesByTerm.OrderBy(a => a.Ordem).ToList();
+            var allExpenseByTerm = await _corporateSpendingService.GetAllExpenseByTerm();
+            ViewBag.ExpenseByTerm = allExpenseByTerm.OrderBy(a => a.Ordem).ToList();
             return View();
         }
 

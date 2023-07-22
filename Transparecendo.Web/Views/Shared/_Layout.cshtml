@@ -2,7 +2,8 @@
 <html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="sm-hover" data-sidebar-image="none" data-preloader="disable">
 
 <head>
-
+    
+    <script src="assets/js/jquery-1.11.0.min.js"></script>
     <meta charset="utf-8" />
     <title>Transparecendo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,7 +153,6 @@
         <div class="vertical-overlay"></div>
         <div class="main-content">
             @RenderBody()
-            @RenderSection("Scripts", required: true)
             <footer class="footer">
                 <div class="container-fluid">
                     <div class="row">
@@ -188,6 +188,5 @@
     <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
     <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
     <script src="assets/js/app.js"></script>
-    <script src="assets/js/jquery-1.11.0.min.js"></script>
 </body>
 </html>
