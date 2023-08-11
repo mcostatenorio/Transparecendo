@@ -35,16 +35,16 @@ namespace Transparecendo.Service.Domain.Repository
                 expenses = expenses.Where(a => a.Presidente != null && a.Presidente.Equals(presidente)).ToList();
             }
 
-            if(expenseFilter.Sort > 0)
+            if (expenseFilter.Sort > 0)
             {
                 switch ((int)expenseFilter.Sort)
                 {
                     case 1:
-                    expenses = expenses.OrderBy(x => x.Presidente).ToList();
-                    break;
+                        expenses = expenses.OrderBy(x => x.Presidente).ToList();
+                        break;
                     case 2:
-                    expenses = expenses.OrderByDescending(x => x.Presidente).ToList();
-                    break;
+                        expenses = expenses.OrderByDescending(x => x.Presidente).ToList();
+                        break;
                 }
             }
 
@@ -58,11 +58,13 @@ namespace Transparecendo.Service.Domain.Repository
 
             int limitPerPage = 20;
 
-            if(expenseFilter.PageSize.HasValue)
+            if (expenseFilter.PageSize.HasValue)
                 limitPerPage = expenseFilter.PageSize.Value;
 
             if (expenseFilter.Page.HasValue)
-                expenses = expenses.Skip(expenseFilter.Page.Value).Take(limitPerPage).ToList();
+            {
+                expenses = expenses.Skip(limitPerPage * (expenseFilter.Page.Value - 1)).Take(limitPerPage).ToList();
+            }
             else
                 expenses = expenses.Take(limitPerPage).ToList();
 

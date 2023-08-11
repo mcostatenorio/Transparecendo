@@ -18,7 +18,13 @@ namespace Transparecendo.Service.API.Controllers
             _serviceCorporateSpending = serviceCorporateSpending;
         }
 
+        /// <summary>
+        /// Import spending data (Upload CSV file)
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         [HttpPost]
+        [Route("importSpendingData")]
         public ActionResult SendCSV(string path)
         {
             if(_serviceCorporateSpending.UploadCSVFile(path))
@@ -33,17 +39,17 @@ namespace Transparecendo.Service.API.Controllers
         /// <param name="expenseFilter">Filter</param>
         /// <returns></returns>
         [ProducesResponseType(200, Type= typeof(CorporateSpendingDto))]
+        [Route("getSpendingData")]
         [HttpGet]
         public ActionResult GetExpense([FromQuery] ExpenseFilterDto expenseFilter)
              => _serviceCorporateSpending.GetExpense(expenseFilter);
 
+        /// <summary>
+        /// Get all expenses by term
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
-        [Route("expenseByData")]
-        public ActionResult GetExpenseByData(DateTime dataInicio, DateTime dataFinal)
-            => _serviceCorporateSpending.GetExpenseByData(dataInicio, dataFinal);
-
-        [HttpGet]
-        [Route("expenseByTerm")]
+        [Route("getSpendingDataByTerm")]
         public ActionResult GetAllExpenseByTerm()
             => _serviceCorporateSpending.GetAllExpenseByTerm();
     }
